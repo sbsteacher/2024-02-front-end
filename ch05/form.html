@@ -57,10 +57,35 @@
             <label>1학년 <input type="radio" name="grade" value="1" checked></label>
             <label>2학년 <input type="radio" name="grade" value="2"></label>
             <label>3학년 <input type="radio" name="grade" value="3"></label>
-            <label>4학년 <input type="radio" name="grade2" value="4"></label>
-            
+            <label>4학년 <input type="radio" name="grade2" value="4"></label>            
+        </div>
+        <div>
+            <select name="blood_type">
+                <option>A형</option>
+                <option>B형</option>
+                <option>AB형</option>
+                <option>O형</option>
+            </select>
         </div>
 
+        <div>
+            <select name="blood_type2">
+                <option value="01">A형</option>
+                <option value="02">B형</option>
+                <option value="03">AB형</option>
+                <option value="04">O형</option>
+            </select>
+        </div>
+
+        <div>
+            <input type="text" list="id_mbti"> <br>
+            <datalist id="id_mbti">
+                <option>INFJ</option>
+                <option>ENFJ</option>
+                <option>INTJ</option>
+                <option>ENTJ</option>
+            </datalist>
+        </div>
 
         <div><input type="submit" value="전송"></div>
     </form>
@@ -82,6 +107,7 @@
                 const min = now.getMinutes();
 
                 $idStartDatetime.value = `${year}-${must2digit(mon)}-${must2digit(day)}T${must2digit(hour)}:${must2digit(min)}`;
+                console.log(`$idStartDatetime.value: ${$idStartDatetime.value}`);
             }
 
         });
