@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 { color: brown !important; }
+        h2 { color: brown; font-weight: 100; }
+        h2 { color: red; }
+        .font-red { color: red; }
+        .font-size-20 { font-size: 20px; }
+        .bg-green { background-color: green; }
+    </style>
+</head>
+<body>
+    <h2>cascading.html</h2>    
+    <h1 style="color: green;">레드향1</h1> <!-- 인라인 스타일 inline style -->
+    <h1>레드향2</h1> <!-- 인라인 스타일 inline style -->
+    <div class="font-red font-size-20 bg-green">
+        <div>
+            <div>
+                <span style="background-color: black">3-depth div</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

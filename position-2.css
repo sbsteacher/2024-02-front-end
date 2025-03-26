@@ -1,0 +1,39 @@
+* { margin: 0; padding: 0; }
+header { position: fixed; top: 0; left: 0; right: 0;
+         background-color: gray;
+         height: 57px; color: #fff;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+}
+
+header > h1 { font-size: 24px; }
+
+main { position: relative; display: flex; justify-content: space-between; height: 300vh; margin-top: 57px; }
+
+.one { width: 60%; height: 100vh; }
+.one > img { width: 100%; height: 100; display: block; }
+
+.two { 
+    width: 40%; overflow: auto;
+    position: sticky;
+    height: 100vh;
+    top: 0;
+    padding: 70px 0 0 12px;
+    text-align: center;
+}
+
+.three { 
+    position: sticky;
+    top: 0;
+    background-color: beige;
+}
+
+
+
+footer { 
+    position: relative;
+    font-size: 24px;
+    height: 150px;
+    background-color: #fff;
+}

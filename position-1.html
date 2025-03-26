@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div { width: 100px; height: 100px; 
+              background-color: antiquewhite;
+              margin-bottom: 20px; 
+            }
+        .div-a { position: static; left: 20px; }
+        /* relative는 static으로 바꿨을 때 위치부터 조정이 된다.  */
+        .div-b { position: relative; left: 20px; top: 20px; }
+        /* absolute는 부모를 결정(부모로 인정하는가 안 하는가). 
+           부모가 결정되면 부모의 왼쪽 위에 붙는다.  
+           그 위치에서 조정이 된다.
+        */
+        .div-c { position: absolute; 
+                 width: 20px; height: 20px;
+                 bottom: 10px; right: 20px; 
+                 background-color: brown; 
+                 margin-bottom: 0;  }
+    </style>
+</head>
+<body>
+    <h2>position-1.html</h2>
+
+    <div class="div-a">A</div>
+    <div class="div-b">B</div>
+    <div style="background-color: aqua; position: relative; ">
+        <div class="div-c">C</div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div { margin-bottom: 20px; background-color: antiquewhite; }
+        .container > div:first-of-type { text-align: center; background-color: blue; color: #fff; line-height: 60px;} /* 1번 적용 */
+        .container > p:first-child { background-color: brown; } /* 2번 적용 희망하나 적용 안 됨 */
+
+        /* 아래 3줄은 2번 선택 */
+        .container > p:nth-child(2) { text-align: right; color:red; }
+        .container > p:first-of-type { text-align: right; color:chocolate; line-height: 32px; }
+        .container > p:nth-of-type(1) { text-align: right; color: blue; line-height: 2.0; }
+
+        .container > div:nth-child(3) { line-height: 0.7; } 
+    </style>
+</head>
+<body>
+    <h2>text-align.html</h2>
+    <div class="container">
+        <div>1. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+        <p>2.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <div>3.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+    
+
+</body>
+</html>
