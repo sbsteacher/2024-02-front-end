@@ -15,6 +15,18 @@
             createIconEditor(document.body, 16, 16);
         });
 
+        const convertRgbToHex = rgb =>`#${rgb.match(/\d+/g).map(x => (+x).toString(16).padStart(2,0)).join('')}`;        
+
+        const getHEX = (RGB) => {  
+            const colors = RGB.replaceAll(' ', '').replace('rgb', '').replace('(', '').replace(')', '').replaceAll(' ', '').split(",");
+            
+            return '#' + (RGB && colors
+                .map(color => Number(color)
+                .toString(16)
+                .padStart(2, '0'))
+                .join(''));
+        } 
+
         function createIconEditor(parent, nx, ny) {
             //input-color
             const $color = elt('input', { type: 'color' });
@@ -38,13 +50,12 @@
                     const td = elt('td');
                     td.addEventListener('click', e => {
 
-                        //값이 없거나 흰색이라면
-                        if(e.target.style.backgroundColor === '' || e.target.style.backgroundColor === 'rgb(255, 255, 255)' )  {
-                            console.log('값이 없거나 흰색이었음');
-                            e.target.style.backgroundColor = $color.value; 
-                        } else { //색이 있었다면
-                            console.log('색상 있음');
+                        if(e.target.style.backgroundColor !== '' 
+                        && e.target.style.backgroundColor !== 'rgb(255, 255, 255)' 
+                        && convertRgbToHex(e.target.style.backgroundColor) === $color.value) {
                             e.target.style.backgroundColor = ''; 
+                        } else {
+                            e.target.style.backgroundColor = $color.value; 
                         }
                                                
                     });
