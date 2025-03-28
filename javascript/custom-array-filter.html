@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [ 22, 33, 55, 77, 88 ];        
+        
+        
+        const arr2 = arr.filter( item => item % 2 === 1 )
+        console.log(arr2);
+
+        const myArr = {
+            '0': 22,
+            '1': 33,
+            '2': 55,
+            '3': 77,
+            '4': 88,
+            'length': 5,
+            'push': function(val) {                
+                this[this.length++] = val;                
+            }, 
+            'filter': function( callback ) {
+                const temp = [];
+                for(let i=0; i<this.length; i++) {                    
+                    if(callback(this[i])) {
+                        temp.push(this[i]);
+                    }
+                }
+                return temp;
+            }
+        };
+        const myArr2 = myArr.filter( item => item % 2 === 1 )
+        console.log(myArr2);        
+    </script>
+</body>
+</html>
