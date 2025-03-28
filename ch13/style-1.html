@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #page > span:not(:last-child) { margin-right: 10px; }
+        #page > span { cursor: pointer; }
+        .selected { font-size: 1.2em; color: red; }
+    </style>
+</head>
+<body>
+    <div id="page"></div>
+
+    <script>
+        const $page = document.querySelector('#page');
+
+        const pageValue = 10;
+        const pageNumberArr = [];
+        for(let i=1; i<=pageValue; i++) {
+            //span태그 생성
+            const span = document.createElement('span'); // <span></span>
+            if(i === 1) {
+                span.classList.add('selected');
+            }
+            pageNumberArr.push(span);
+            span.addEventListener('click', (e) => {
+                
+                pageNumberArr.forEach( item => item.classList.toggle('selected', item.innerText == i) );
+
+            });
+            span.innerText = i; // <span>3</span>
+            $page.appendChild(span);
+        }
+
+    </script>
+</body>
+</html>

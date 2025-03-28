@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const getData = async () => {
+            const list = await axios({
+                method: 'get',
+                url: 'https://picsum.photos/v2/list',
+                data: {
+                    page: 1,
+                    limit: 20
+                }
+            });
+            console.log(list);
+        }
+        getData();
+    </script>
+</body>
+</html>
