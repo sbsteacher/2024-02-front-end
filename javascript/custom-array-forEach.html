@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [ 10, 20, 30 ];
+        arr.push(40);
+        arr.push(140);
+        console.log(arr.length);
+
+        function cb(item) {
+            console.log(`cb - ${item}`);
+        }
+
+        arr.forEach( cb );
+        console.log('-------');
+        cb(10);
+        cb(20);
+        cb(30);
+        cb(40);
+        console.log('=======');
+        const myArr = {
+            '0': 10,
+            '1': 20,
+            '2': 30,
+            'length': 3,
+            'push': function(val) {                
+                this[this.length++] = val;                
+            },
+            'forEach': function( callback ) {
+                for(let i=0; i<this.length; i++) {
+                    callback(this[i]);
+                }
+            }
+        };
+        myArr.push(40);
+        myArr.push(140);
+        console.log(myArr.length);
+        myArr.forEach( cb );
+    </script>
+</body>
+</html>

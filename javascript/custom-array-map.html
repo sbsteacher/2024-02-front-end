@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [ 10, 20, 30 ];
+        arr.push(40);
+        const arr2 = arr.map( item => { return item * 2; } );
+        console.log(arr2);
+
+        const myArr = {
+            '0': 10,
+            '1': 20,
+            '2': 30,
+            'length': 3,
+            'push': function(val) {                
+                this[this.length++] = val;                
+            },
+            'map': function( callback ) {
+                const temp = [];
+
+                return temp;
+            }
+        };
+        myArr.push(40);
+        const myArr2 = myArr.map( item => { return item * 2; } );
+        console.log(myArr2);
+    </script>
+</body>
+</html>

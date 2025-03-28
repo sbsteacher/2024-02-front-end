@@ -15,16 +15,15 @@
             createIconEditor(document.body, 16, 16);
         });
 
-        const convertRgbToHex = rgb =>`#${rgb.match(/\d+/g).map(x => (+x).toString(16).padStart(2,0)).join('')}`;        
+        const convertRgbToHex = rgb =>`#${rgb.match(/\d+/g).map(x => (+x).toString(16).padStart(2,0)).join('')}`;
 
         const getHEX = (RGB) => {  
-            const colors = RGB.replaceAll(' ', '').replace('rgb', '').replace('(', '').replace(')', '').replaceAll(' ', '').split(",");
+            const colors = RGB.replaceAll(' ', '').replace('rgb(', '').replace(')', '').split(',');
             
-            return '#' + (RGB && colors
-                .map(color => Number(color)
-                .toString(16)
-                .padStart(2, '0'))
-                .join(''));
+            return '#' + (RGB && colors.map(color => Number(color).toString(16)
+                                                                  .padStart(2, '0')
+                                        ).join('')
+                                );
         } 
 
         function createIconEditor(parent, nx, ny) {
