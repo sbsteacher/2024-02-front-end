@@ -37,7 +37,16 @@
                 for(let i2=0; i2<nx; i2++) {
                     const td = elt('td');
                     td.addEventListener('click', e => {
-                        e.target.style.backgroundColor = $color.value;
+
+                        //값이 없거나 흰색이라면
+                        if(e.target.style.backgroundColor === '' || e.target.style.backgroundColor === 'rgb(255, 255, 255)' )  {
+                            console.log('값이 없거나 흰색이었음');
+                            e.target.style.backgroundColor = $color.value; 
+                        } else { //색이 있었다면
+                            console.log('색상 있음');
+                            e.target.style.backgroundColor = ''; 
+                        }
+                                               
                     });
                     cells.push(td);
                     tr.appendChild(td);
